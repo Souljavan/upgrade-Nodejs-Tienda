@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "477b3ceb-a0c5-4280-b628-52ba0773953f",
+		"name": "Tienda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usaurios",
+			"item": [
+				{
+					"name": "Get Usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYwNzIwNSwiZXhwIjoxNjQ0NjEwODA1fQ.8u0wd0pkt5Q1F-Oc_fgMUOGAANBeHKT2NZp77gh-yrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"usuario1\",\n    \"email\":\"usuario1@gmail.com\",\n    \"password\":\"123456\",\n    \"role\":\"usuario\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios/register-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"usuario1@gmail.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categorias",
+			"item": [
+				{
+					"name": "Get Categorias",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Una Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYwNzIwNSwiZXhwIjoxNjQ0NjEwODA1fQ.8u0wd0pkt5Q1F-Oc_fgMUOGAANBeHKT2NZp77gh-yrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categorias/6206c022f5b8fbbbbde1da81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"6206c022f5b8fbbbbde1da81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYwNzIwNSwiZXhwIjoxNjQ0NjEwODA1fQ.8u0wd0pkt5Q1F-Oc_fgMUOGAANBeHKT2NZp77gh-yrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Tarjetas Graficass\",\n    \"estado\":\"activa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYwNzIwNSwiZXhwIjoxNjQ0NjEwODA1fQ.8u0wd0pkt5Q1F-Oc_fgMUOGAANBeHKT2NZp77gh-yrA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Tarjetas Graficas\",\n    \"estado\":\"activa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/categorias/6206c022f5b8fbbbbde1da81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"6206c022f5b8fbbbbde1da81"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Get productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Un Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"test1\",\n    \"descripcion\":\"testdescrip\",\n    \"imagen\":\"sadsad.jpg\",\n    \"precio\":\"100\",\n    \"Estado\":\"activo\",\n    \"categoria\":\"6206c022f5b8fbbbbde1da81\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

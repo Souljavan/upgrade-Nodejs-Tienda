@@ -288,14 +288,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/productos",
+							"raw": "http://localhost:3000/productos/6206c81a8bc26de9f14d8ee4",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"productos"
+								"productos",
+								"6206c81a8bc26de9f14d8ee4"
 							]
 						}
 					},
@@ -334,6 +335,84 @@
 							"port": "3000",
 							"path": [
 								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"test2\",\n    \"descripcion\":\"testdescrip\",\n    \"imagen\":\"sadsad.jpg\",\n    \"precio\":\"100\",\n    \"Estado\":\"activo\",\n    \"categoria\":\"6206c022f5b8fbbbbde1da81\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos/6206c81a8bc26de9f14d8ee4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								"6206c81a8bc26de9f14d8ee4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8xQGdtYWlsLmNvbSIsInVzZXJJZCI6IjYyMDZiNTdjZTA2M2Q3MjMzMDAyNGNhYiIsImlhdCI6MTY0NDYxMTU4MywiZXhwIjoxNjQ0NjE1MTgzfQ.aTs5afHq0v3GdTqCoYEPTaD-niPdeL4WVVu3D21ZVak",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/productos/6206c81a8bc26de9f14d8ee4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productos",
+								"6206c81a8bc26de9f14d8ee4"
 							]
 						}
 					},

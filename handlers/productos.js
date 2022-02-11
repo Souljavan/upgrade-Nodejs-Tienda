@@ -60,7 +60,7 @@ router.route('/:id').put(authorize, (req, res, next) => {
     productomodificar._id = productoid;
     Productos.findByIdAndUpdate(productoid, productomodificar, { new: true })
         .then(prodcutoactualizado => {
-            res.status(200).json(instructoractualizado);
+            res.status(200).json(prodcutoactualizado);
         })
         .catch(error => {
             next(error);
@@ -69,10 +69,10 @@ router.route('/:id').put(authorize, (req, res, next) => {
 })
 
 router.route('/:id').delete(authorize, (req, res, next) => {
-    const instructorid = req.params.id;
-    instructores.findByIdAndDelete(instructorid)
+    const productoid = req.params.id;
+    Productos.findByIdAndDelete(productoid)
         .then(() => {
-            return res.status(200).json(`Instructor con id ${instructorid} eliminado`);
+            return res.status(200).json(`Producto con id ${productoid} eliminado`);
         })
         .catch(error => {
             next(error);
@@ -81,6 +81,6 @@ router.route('/:id').delete(authorize, (req, res, next) => {
 
 
 
-
+module.exports = router;
 
 

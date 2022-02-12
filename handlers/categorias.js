@@ -4,8 +4,8 @@ const Categorias = require('../model/categorias');
 const authorize = require("../middlewares/auth");
 
 
-router.route('/').get(authorize, (req, res, next) => {
-    Categorias.find()
+router.route('/').get((req, res, next) => {
+    Categorias.find({'estado':"activa"})
         .then((categoria) => {
             if (categoria=="") {
                 return res.status(404).json('No se encontro ninguna Categoria');
@@ -18,7 +18,7 @@ router.route('/').get(authorize, (req, res, next) => {
 });
 
 
-router.route('/:id').get(authorize, (req, res, next) => {
+router.route('/:id').get((req, res, next) => {
     const id = req.params.id;
     Categorias.findById(id)
         .then(categoria => {
@@ -66,26 +66,6 @@ router.route('/:id').put(authorize, (req, res, next) => {
 
 
 
-
-//Añade clientes a gimnasios
-router.route('/:id/clientes').put(authorize, (req, res, next) => {
-
-    const gimnasioid = req.params.id;
-    const clienteid = req.body.cliente_id;
-
-    Gimnasio.findByIdAndUpdate(
-        gimnasioid,
-        { $push: { clientes: clienteid } },
-        { new: true }
-    )
-        .then(gymactualizado => {
-            res.status(200).json(gymactualizado)
-        })
-        .catch(error => {
-            next(error);
-        });
-
-})
 
 router.route('/:id/').delete(authorize, (req, res, next) => {
     const gimnasioid = req.params.id;

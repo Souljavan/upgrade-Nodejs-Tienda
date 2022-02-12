@@ -29,7 +29,7 @@ app.use('/usuarios', usaurios)
 
 
   
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3001, () => {
       console.log(`Servidor arrancado`);
     });
 
@@ -37,6 +37,7 @@ app.listen(process.env.PORT || 3000, () => {
 // Express error handling
 app.use((req, res, next) => {
   setImmediate(() => {
+    console.log("sdsad")
       next(new Error('Something went wrong'));
   });
 });

@@ -4,7 +4,7 @@ const Productos = require('../model/productos');
 const authorize = require("../middlewares/auth");
 
 
-router.route('/').get(authorize, (req, res, next) => {
+router.route('/').get( (req, res, next) => {
     Productos.find()
         .then((productos) => {
             if (productos=="") {
@@ -18,7 +18,7 @@ router.route('/').get(authorize, (req, res, next) => {
 });
 
 
-router.route('/:id').get(authorize, (req, res, next) => {
+router.route('/:id').get( (req, res, next) => {
     const id = req.params.id;
     Productos.findById(id)
         .then(producto => {

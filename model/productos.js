@@ -8,6 +8,8 @@ const ProductosSchema = new Schema(
       descripcion: { type: String, required: true },
       imagen: { type: String, required: true},
       precio:{ type: Number, required: true},
+      oferta:{ type: Boolean, required: true},
+      masvendido:{ type: Boolean, required: true},
       categoria: [{ type: mongoose.Types.ObjectId, ref: 'categoria' }]
     },
     {

@@ -77,12 +77,13 @@ router.post("/signin", (req, res, next) => {
             email: getUser.email,
             userId: getUser._id
         }, "longer-secret-is-better", {
-            expiresIn: "1h"
+            expiresIn: "24h"
         });
         res.status(200).json({
             token: jwtToken,
             expiresIn: 86400,
-            _id: getUser._id
+            _id: getUser._id,
+            role: getUser.role
         });
     }).catch(err => {
         return res.status(401).json({

@@ -78,7 +78,7 @@ router.post("/signin", (req, res, next) => {
             userId: getUser._id
         }, "longer-secret-is-better", {
             expiresIn: "24h"
-        });
+        }); 
         res.status(200).json({
             token: jwtToken,
             expiresIn: 86400,

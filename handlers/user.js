@@ -60,19 +60,23 @@ router.post("/signin", (req, res, next) => {
     userSchema.findOne({
         email: req.body.email
     }).then(user => {
+        console.log(user)
         if (!user) {
+            console.log("El usaurio no ha sido encontrado. ")
             return res.status(401).json({
                 message: "Authentication failed"
             });
         }
+        console.log("continua con el codigo. ")
         getUser = user;
         return bcrypt.compare(req.body.password, user.password);
     }).then(response => {
+        console.log("continua con el codigo. 2")
         if (!response) {
             return res.status(401).json({
                 message: "Authentication failed"
             });
-        }
+        }else {
         let jwtToken = jwt.sign({
             email: getUser.email,
             userId: getUser._id
@@ -85,10 +89,12 @@ router.post("/signin", (req, res, next) => {
             _id: getUser._id,
             role: getUser.role
         });
+    }
     }).catch(err => {
-        return res.status(401).json({
-            message: "Authentication failed"
-        });
+        console.log(err)
+        // return res.status(401).json({
+        //     message: "Authentication failed"
+        // });
     });
 });
 
@@ -104,14 +110,12 @@ router.route('/').get((req, res) => {
 })
 
 // Get Single User
-router.route('/user-profile/:id').get(authorize, (req, res, next) => {
+router.route('/user-profile/:id').get((req, res, next) => {
     userSchema.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
         } else {
-            res.status(200).json({
-                msg: data
-            })
+            res.status(200).json({data })
         }
     })
 })
